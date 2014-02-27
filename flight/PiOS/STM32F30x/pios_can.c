@@ -7,7 +7,7 @@
  * @{
  *
  * @file       pios_can.c
- * @author     Tau Labs, http://taulabs.org, Copyright (C) 2013
+ * @author     Tau Labs, http://taulabs.org, Copyright (C) 2013-2014
  * @brief      PiOS CAN interface header
  * @see        The GNU Public License (GPL) Version 3
  *
@@ -77,7 +77,7 @@ static bool PIOS_CAN_validate(struct pios_can_dev *can_dev)
 	return (can_dev->magic == PIOS_CAN_DEV_MAGIC);
 }
 
-#if !defined(PIOS_INCLUDE_FREERTOS)
+#if !defined(PIOS_INCLUDE_FREERTOS) && !defined(PIOS_INCLUDE_CHIBIOS)
 #error PIOS_CAN REQUIRES FREERTOS
 #endif
 
