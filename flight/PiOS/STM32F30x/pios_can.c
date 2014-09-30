@@ -249,6 +249,10 @@ void CAN1_RX1_IRQHandler(void)
  */
 void USB_HP_CAN1_TX_IRQHandler(void)
 {
+#if defined(PIOS_INCLUDE_CHIBIOS)
+	CH_IRQ_PROLOGUE();
+#endif /* defined(PIOS_INCLUDE_CHIBIOS) */
+
 	CAN_ClearITPendingBit(can_dev->cfg->regs, CAN_IT_TME);
 
 	bool valid = PIOS_CAN_validate(can_dev);
@@ -279,6 +283,10 @@ void USB_HP_CAN1_TX_IRQHandler(void)
 #if defined(PIOS_INCLUDE_FREERTOS)
 	portEND_SWITCHING_ISR(tx_need_yield ? pdTRUE : pdFALSE);
 #endif /* defined(PIOS_INCLUDE_FREERTOS) */
+
+#if defined(PIOS_INCLUDE_CHIBIOS)
+	CH_IRQ_EPILOGUE();
+#endif /* defined(PIOS_INCLUDE_CHIBIOS) */
 }
 
 #endif /* PIOS_INCLUDE_CAN */
