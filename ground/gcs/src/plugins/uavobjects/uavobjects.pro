@@ -79,8 +79,7 @@ HEADERS += $$UAVOBJECT_SYNTHETICS/accels.h \
     $$UAVOBJECT_SYNTHETICS/hwrevomini.h \
     $$UAVOBJECT_SYNTHETICS/hwsparky.h \
     $$UAVOBJECT_SYNTHETICS/hwsparkybgc.h \
-    $$UAVOBJECT_SYNTHETICS/hwtaulink.h \
-    $$UAVOBJECT_SYNTHETICS/i2cvm.h \
+    $$UAVOBJECT_SYNTHETICS/hwvrubrain.h \    $$UAVOBJECT_SYNTHETICS/hwtaulink.h \    $$UAVOBJECT_SYNTHETICS/i2cvm.h \
     $$UAVOBJECT_SYNTHETICS/i2cvmuserprogram.h \
     $$UAVOBJECT_SYNTHETICS/inssettings.h \
     $$UAVOBJECT_SYNTHETICS/insstate.h \
@@ -195,8 +194,7 @@ SOURCES += $$UAVOBJECT_SYNTHETICS/accels.cpp \
     $$UAVOBJECT_SYNTHETICS/hwrevomini.cpp \
     $$UAVOBJECT_SYNTHETICS/hwsparky.cpp \
     $$UAVOBJECT_SYNTHETICS/hwsparkybgc.cpp \
-    $$UAVOBJECT_SYNTHETICS/hwtaulink.cpp \
-    $$UAVOBJECT_SYNTHETICS/i2cvm.cpp \
+    $$UAVOBJECT_SYNTHETICS/hwvrubrain.cpp \    $$UAVOBJECT_SYNTHETICS/hwtaulink.cpp \    $$UAVOBJECT_SYNTHETICS/i2cvm.cpp \
     $$UAVOBJECT_SYNTHETICS/i2cvmuserprogram.cpp \
     $$UAVOBJECT_SYNTHETICS/inssettings.cpp \
     $$UAVOBJECT_SYNTHETICS/insstate.cpp \

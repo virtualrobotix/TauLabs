@@ -1,14 +1,14 @@
 /**
  ******************************************************************************
  *
- * @file       stmplugin.cpp
+ * @file       vrubrain.h
  * @author     Tau Labs, http://taulabs.org, Copyright (C) 2013
  *
  * @addtogroup GCSPlugins GCS Plugins
  * @{
- * @addtogroup Boards_Stm STM boards support Plugin
+ * @addtogroup Boards_OpenPilotPlugin OpenPilot boards support Plugin
  * @{
- * @brief Plugin to support boards by STM
+ * @brief Plugin to support boards by the OP project
  *****************************************************************************/
 /*
  * This program is free software; you can redistribute it and/or modify
@@ -25,52 +25,27 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
+#ifndef VRUBRAIN_H
+#define VRUBRAIN_H
 
-#include "stmplugin.h"
-#include "flyingf3.h"
-#include "flyingf4.h"
-#include "discoveryf4.h"
-#include "vrubrain.h"
-#include <QtPlugin>
+#include <coreplugin/iboardtype.h>
 
+class IBoardType;
 
-StmPlugin::StmPlugin()
+class Vrubrain : public Core::IBoardType
 {
-   // Do nothing
-}
+public:
+    Vrubrain();
+    virtual ~Vrubrain();
 
-StmPlugin::~StmPlugin()
-{
-   // Do nothing
-}
+    virtual QString shortName();
+    virtual QString boardDescription();
+    virtual bool queryCapabilities(BoardCapabilities capability);
+    virtual QStringList getSupportedProtocols();
+    virtual QPixmap getBoardPicture();
+    virtual QString getHwUAVO();
+    virtual int queryMaxGyroRate();
+};
 
-bool StmPlugin::initialize(const QStringList& args, QString *errMsg)
-{
-   Q_UNUSED(args);
-   Q_UNUSED(errMsg);
-   return true;
-}
 
-void StmPlugin::extensionsInitialized()
-{
-    /**
-     * Create the board objects here.
-     *
-     */
-    FlyingF3* flyingf3 = new FlyingF3();
-    addAutoReleasedObject(flyingf3);
-
-    FlyingF4* flyingf4 = new FlyingF4();
-    addAutoReleasedObject(flyingf4);
-
-    DiscoveryF4* discoveryf4 = new DiscoveryF4();
-    addAutoReleasedObject(discoveryf4);
-
-    Vrubrain* vrubrain = new Vrubrain();
-    addAutoReleasedObject(vrubrain);
-}
-
-void StmPlugin::shutdown()
-{
-}
-
+#endif // VRUBRAIN_H
