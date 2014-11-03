@@ -371,6 +371,8 @@ enum usb_product_ids {
 	USB_PRODUCT_ID_DISCOVERYF4    = USB_PRODUCT_ID_SPARE,
 	USB_PRODUCT_ID_FLYINGF3       = USB_PRODUCT_ID_SPARE,
 	USB_PRODUCT_ID_FLYINGF4       = USB_PRODUCT_ID_SPARE,
+	/* VR uBrain Boards */
+	USB_PRODUCT_ID_VRUBRAIN       = USB_PRODUCT_ID_SPARE,
 } __attribute__((packed));
 
 enum usb_op_board_ids {
